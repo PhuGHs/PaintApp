@@ -36,6 +36,8 @@
             this.color = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Shape = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.saveImage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -50,6 +52,8 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.splitContainer1.Panel1.Controls.Add(this.saveImage);
+            this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.radioButton2);
             this.splitContainer1.Panel1.Controls.Add(this.tri);
             this.splitContainer1.Panel1.Controls.Add(this.rec);
@@ -105,7 +109,7 @@
             // 
             this.curColor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.curColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.curColor.Location = new System.Drawing.Point(60, 403);
+            this.curColor.Location = new System.Drawing.Point(116, 434);
             this.curColor.Name = "curColor";
             this.curColor.Size = new System.Drawing.Size(100, 24);
             this.curColor.TabIndex = 9;
@@ -113,7 +117,7 @@
             // color
             // 
             this.color.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.color.Location = new System.Drawing.Point(158, 374);
+            this.color.Location = new System.Drawing.Point(236, 435);
             this.color.Name = "color";
             this.color.Size = new System.Drawing.Size(31, 23);
             this.color.TabIndex = 8;
@@ -124,10 +128,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label1.Location = new System.Drawing.Point(54, 361);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            this.label1.Location = new System.Drawing.Point(142, 356);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 36);
+            this.label1.Size = new System.Drawing.Size(107, 42);
             this.label1.TabIndex = 4;
             this.label1.Text = "Color";
             // 
@@ -141,6 +145,30 @@
             this.Shape.Size = new System.Drawing.Size(196, 67);
             this.Shape.TabIndex = 0;
             this.Shape.Text = "Shape";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label2.Location = new System.Drawing.Point(12, 825);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 25);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "PhuLe";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // saveImage
+            // 
+            this.saveImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saveImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.saveImage.Location = new System.Drawing.Point(69, 706);
+            this.saveImage.Name = "saveImage";
+            this.saveImage.Size = new System.Drawing.Size(249, 50);
+            this.saveImage.TabIndex = 13;
+            this.saveImage.Text = "Save current image";
+            this.saveImage.UseVisualStyleBackColor = true;
+            this.saveImage.Click += new System.EventHandler(this.saveImage_Click);
             // 
             // Form1
             // 
@@ -169,6 +197,8 @@
         private System.Windows.Forms.RadioButton rec;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton tri;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button saveImage;
     }
 }
 

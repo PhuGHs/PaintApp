@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,7 +40,7 @@ namespace PaintApp
             }
             else if (tri.Checked)
             {
-
+                Program.myRectangles.generateTriangle(splitContainer1.Panel2, e.X, e.Y);
             }
             else
             {
@@ -53,6 +54,35 @@ namespace PaintApp
             {
                 rec.DrawCustomRectangle(g1, rec);
             }
+        }
+
+        private void saveImage_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Control image = splitContainer1.Panel2;
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                int Width = image.Width;
+                int Height = image.Height;
+                Bitmap bm = new Bitmap(Width, Height);
+
+                image.DrawToBitmap(bm, new Rectangle(0, 0, Width, Height));
+
+                saveFileDialog.Filter = "Png Image (.png)|*.png|JPEG Image (.jpeg)|*.jpeg";
+                saveFileDialog.Title = "Save image";
+                DialogResult result = saveFileDialog.ShowDialog();
+                var path = saveFileDialog.FileName;
+                if (result == DialogResult.Cancel)
+                {
+                    return;
+                }
+                bm.Save(path, ImageFormat.Png);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

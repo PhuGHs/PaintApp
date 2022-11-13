@@ -22,8 +22,8 @@ namespace PaintApp
             Random rd = new Random();
             int Width = rd.Next(400);
             Rectangle r = new Rectangle(x, y, Width, Width);
-            Pen pen = new Pen(Program.myColor.Color);
-            CustomRectangle cr = new CustomRectangle("circle", r, pen);
+            SolidBrush fillColor = new SolidBrush(Program.myColor.Color);
+            CustomRectangle cr = new CustomRectangle("circle", r, fillColor);
             panel.Invalidate();
             _rects.Add(cr);
         }
@@ -34,10 +34,29 @@ namespace PaintApp
             int Width = rd.Next(400);
             int Height = rd.Next(400);
             Rectangle rec = new Rectangle(x, y, Width, Height);
-            Pen pen = new Pen(Program.myColor.Color);
-            CustomRectangle cr = new CustomRectangle("rectangle", rec, pen);
+            SolidBrush fillColor = new SolidBrush(Program.myColor.Color);
+            CustomRectangle cr = new CustomRectangle("rectangle", rec, fillColor);
 
             panel.Invalidate();
+            _rects.Add(cr);
+        }
+
+        public void generateTriangle(Control panel, int x, int y)
+        {
+            Random rd = new Random();
+            int x1 = rd.Next(400);
+            int y1 = rd.Next(400);
+            int x2 = rd.Next(400);
+            int y2 = rd.Next(400);
+            Point point1 = new Point(x, y);
+            Point point2 = new Point(x1, y1);
+            Point point3 = new Point(x2, y2);
+            Point[] points = { point1, point2, point3 };
+            
+            SolidBrush fillColor = new SolidBrush(Program.myColor.Color);
+
+            panel.Invalidate();
+            CustomRectangle cr = new CustomRectangle("triangle", points, fillColor);
             _rects.Add(cr);
         }
     }
