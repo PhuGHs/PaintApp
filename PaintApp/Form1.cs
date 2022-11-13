@@ -35,7 +35,7 @@ namespace PaintApp
         {
             if (rec.Checked)
             {
-                Program.myRectangles.generateRectangle(splitContainer1.Panel2,e.X, e.Y);
+                Program.myRectangles.generateRectangle(splitContainer1.Panel2, e.X, e.Y);
             }
             else if (tri.Checked)
             {
@@ -43,30 +43,15 @@ namespace PaintApp
             }
             else
             {
-                Program.myRectangles.generateCircle(splitContainer1.Panel2,e.X, e.Y);
+                Program.myRectangles.generateCircle(splitContainer1.Panel2, e.X, e.Y);
             }
         }
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
             Graphics g1 = e.Graphics;
-            //Graphics g2 = e.Graphics;
-            if (rec.Checked)
+            foreach(var rec in Program.myRectangles.Rects)
             {
-                foreach(var rec in Program.myRectangles.Rects)
-                {
-                    rec.DrawCustomRectangle(g1, rec);
-                }
-            }
-            else if (tri.Checked)
-            {
-                
-            }
-            else
-            {
-                foreach(var el in Program.myRectangles.ellipses)
-                {
-                    el.DrawCustomRectangle(g1, el);
-                }
+                rec.DrawCustomRectangle(g1, rec);
             }
         }
     }
