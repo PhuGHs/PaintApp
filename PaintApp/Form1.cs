@@ -49,13 +49,12 @@ namespace PaintApp
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
             Graphics g1 = e.Graphics;
-            Graphics g2 = e.Graphics;
+            //Graphics g2 = e.Graphics;
             if (rec.Checked)
             {
-                foreach(var rec in rectangles)
+                foreach(var rec in Program.myRectangles.Rects)
                 {
-                    Pen pen1 = new Pen(Program.myColor.Color);
-                    g1.DrawRectangle(pen1, rec);
+                    rec.DrawCustomRectangle(g1, rec);
                 }
             }
             else if (tri.Checked)
@@ -64,12 +63,10 @@ namespace PaintApp
             }
             else
             {
-                foreach(var el in ellipses)
+                foreach(var el in Program.myRectangles.ellipses)
                 {
-                    Pen pen2 = new Pen(Program.myColor.Color);
-                    g1.DrawEllipse(pen2, el);
+                    el.DrawCustomRectangle(g1, el);
                 }
-                g1.DrawRectangle(Pens.AliceBlue, 6, 6, 10, 10);
             }
         }
     }

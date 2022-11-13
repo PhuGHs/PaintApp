@@ -25,7 +25,8 @@ namespace PaintApp
             Random rd = new Random();
             int Width = rd.Next(400);
             Rectangle r = new Rectangle(x, y, Width, Width);
-            CustomRectangle cr = new CustomRectangle(r, Pens.Red);
+            Pen pen = new Pen(Program.myColor.Color);
+            CustomRectangle cr = new CustomRectangle(r, pen);
             panel.Invalidate();
             ellipses.Add(cr);
         }
@@ -36,7 +37,8 @@ namespace PaintApp
             int Width = rd.Next(400);
             int Height = rd.Next(400);
             Rectangle rec = new Rectangle(x, y, Width, Height);
-            CustomRectangle cr = new CustomRectangle(rec, Pens.Blue);
+            Pen pen = new Pen(Program.myColor.Color);
+            CustomRectangle cr = new CustomRectangle(rec, pen);
 
             panel.Invalidate();
             _rects.Add(cr);

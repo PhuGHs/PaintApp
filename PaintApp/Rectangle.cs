@@ -20,5 +20,10 @@ namespace PaintApp
             this._rec = r;
             this._pen = pen;
         }
+        
+        public void DrawCustomRectangle(Graphics g, CustomRectangle rec)
+        {
+            g.DrawRectangle(rec._pen, rec._rec);
+        }
     }
 }
